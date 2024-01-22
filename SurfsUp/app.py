@@ -22,8 +22,8 @@ Base.prepare(autoload_with=engine)
 
 # Assign the measurement class to a variable called `Measurement` and
 # the station class to a variable called `Station`
-measurement = Base.classes['measurement']
-station = Base.classes["station"]
+Measurement = Base.classes['measurement']
+Station = Base.classes["station"]
 
 # Create a session
 session = Session(engine)
@@ -42,7 +42,7 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return (
-        f"Welcome to the Climate Analysis API!<br/>"
+        f"Welcome to the Climate Analysis!<br/>"
         f"Available Routes:<br/>"
         f"/api/v1.0/precipitation<br/>"
         f"/api/v1.0/stations<br/>"
@@ -110,3 +110,5 @@ def temperature_stats(start, end=None):
 # Run the Flask app
 if __name__ == '__main__':
     app.run(debug=True)
+
+
